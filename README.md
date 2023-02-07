@@ -1,4 +1,4 @@
-# bug_tracing_tool
+# bug_tracking_tool
 
 tracking bug ticket on jira platform
 
