@@ -1,0 +1,48 @@
+story_sprint : ['LP Sprint 26']
+story_number : LP1-3303
+story_point : 55.0
+subtask_number : ['LP1-3277', 'LP1-3279', 'LP1-3280', 'LP1-3291', 'LP1-3296', 'LP1-3300', 'LP1-3329']
+subtask_title : ['[Backend] fix the response for bankcard create ', '[Backend] co-work with Novox member.', '[Backend] add the parameter to create trader API.', '[Backend] update the response format for Get Deposit', '[Backend] update the method of Notification from Event to Job', '[Backend] add the new field for Notification on api-cloudhub-panel and cloudhub.', '[Backend] update the url on Notification for Novox dev']
+-----------------------------------------------------
+story_sprint : ['LP Sprint 26']
+story_number : LP1-3160
+story_point : 89.0
+subtask_number : ['LP1-3253', 'LP1-3254', 'LP1-3255', 'LP1-3256', 'LP1-3294', 'LP1-3326']
+subtask_title : ['[QA] Read document for 【Novox Whitelabel】Clients Migration - Importing Clients to LogixPanel and LogixCRM [Testing]', '[QA] Write test plan for 【Novox Whitelabel】Clients Migration - Importing Clients to LogixPanel and LogixCRM [Testing]', '[QA] Write test case for 【Novox Whitelabel】Clients Migration - Importing Clients to LogixPanel and LogixCRM [Testing]', '[QA] Test execution for 【Novox Whitelabel】Clients Migration - Importing Clients to LogixPanel and LogixCRM [Testing]', '[BUG] Trader\'s regulation should be "VFSC" but now it\'s "ASIC" in CRM portal', '[QA] 2nd Test execution for 【Novox Whitelabel】Clients Migration - Importing Clients to LogixPanel and LogixCRM [Testing]']
+-----------------------------------------------------
+story_sprint : ['LP Sprint 26']
+story_number : LP1-3052
+story_point : 89.0
+subtask_number : ['LP1-3231', 'LP1-3232', 'LP1-3233']
+subtask_title : ['[Backend] Terraform & k8s configuration update for cloudhub, api_cloudhub, api_cloudhub_panel for prod env', '[Backend] Terraform & k8s configuration update for fe_cloudhub_client for prod env', '[Backend] gitlab variables update and integration for deployment']
+-----------------------------------------------------
+story_sprint : ['LP Sprint 26']
+story_number : LP1-3047
+story_point : 55.0
+subtask_number : ['LP1-3244', 'LP1-3245', 'LP1-3246', 'LP1-3350', 'LP1-3356', 'LP1-3358', 'LP1-3359']
+subtask_title : ['[QA] Write test plan for 【Novox Whitelabel】FORM integration with LogixPanel and LogixCRM', '[QA] Write test cases for 【Novox Whitelabel】FORM integration with LogixPanel and LogixCRM', '[QA] Test execution for 【Novox Whitelabel】FORM integration with LogixPanel and LogixCRM', "[BUG] Can't open the demo account ", "[BUG] Can't complete the form registration ", '[QA] 2nd Test execution for 【Novox Whitelabel】FORM integration with LogixPanel and LogixCRM', "[BUG] The RG227 section only shows up when the client's country is AU"]
+-----------------------------------------------------
+story_sprint : ['LP Sprint 26']
+story_number : LP1-3031
+story_point : 89.0
+subtask_number : ['LP1-3235', 'LP1-3236', 'LP1-3237', 'LP1-3238', 'LP1-3240', 'LP1-3241', 'LP1-3242', 'LP1-3243', 'LP1-3299']
+subtask_title : ['[Backend] Update routes and controllers/requests for new endpoint', '[Backend] Update trader service for trader/account/document info', '[Backend] Update trader repository for trader/account/document info', '[Backend] Unittest for get trader info api', '[QA] Read document for【Blueberry Whitelabel】【Novox Whitelabel】Add Get Trader API', '[QA] Write test plan for【Blueberry Whitelabel】【Novox Whitelabel】Add Get Trader API', '[QA] Write test cases for【Blueberry Whitelabel】【Novox Whitelabel】Add Get Trader API', '[QA] Test execution for【Blueberry Whitelabel】【Novox Whitelabel】Add Get Trader API', '[QA] Write automation for【Blueberry Whitelabel】【Novox Whitelabel】Add Get Trader API']
+-----------------------------------------------------
+story_sprint : ['LP Sprint 26']
+story_number : LP1-3030
+story_point : 89.0
+subtask_number : ['LP1-3247', 'LP1-3248', 'LP1-3249', 'LP1-3301', 'LP1-3307']
+subtask_title : ['[QA] Write test plan for 【Blueberry Whitelabel】Clients Data Migration [QA Testing]', '[QA] Write test cases for 【Blueberry Whitelabel】Clients Data Migration [QA Testing]', '[QA] Test execution for 【Blueberry Whitelabel】Clients Data Migration [QA Testing]', '[BUG] MT server connection error - 504 Gateway Time-out', '[QA] 2nd Test execution  for 【Blueberry Whitelabel】Clients Data Migration [QA Testing]']
+-----------------------------------------------------
+story_sprint : ['LP1 Sprint 24', 'LP Sprint 26']
+story_number : LP1-2927
+story_point : 233.0
+subtask_number : ['LP1-2929', 'LP1-2932', 'LP1-3028', 'LP1-2936', 'LP1-2933', 'LP1-2935', 'LP1-2963', 'LP1-2948', 'LP1-2954', 'LP1-2961', 'LP1-2953', 'LP1-2952', 'LP1-2959', 'LP1-2955', 'LP1-2956', 'LP1-2957', 'LP1-2989', 'LP1-2988', 'LP1-2958', 'LP1-2995', 'LP1-3029', 'LP1-3042', 'LP1-3043', 'LP1-3050', 'LP1-3057', 'LP1-3059', 'LP1-3060', 'LP1-3109', 'LP1-3153', 'LP1-3266', 'LP1-3273', 'LP1-3274', 'LP1-3276', 'LP1-3295']
+subtask_title : ['[QA] Write the Test Plan & Test Scopes for Whitelabel - Novox', '[Backend] update terraform / k8s for new site deployments', '[BUG] The "Login as Client" button doesn\'t work as it expected ', '[Backend] update Client Portal settings', '[Backend] update CRM settings', '[Backend] update Admin settings', '[Backend] update pay_gate settings', '[QA] Test Execution for Fully Regression Test : Admin User', '[QA] Test Execution for Fully Regression Test : CRM User', '[QA] Test Execution for Fully Regression Test : Use Cases Test (Client - Treasury) - N/A', '[QA] Test Execution for Fully Regression Test : Admin & Client Portal - Treasury (Internal Transfers)', '[QA] Test Execution for Fully Regression Test : Admin & Client Portal - Treasury (Bank Account Approval & Verify Payment Methods)', '[QA] Test Execution for Fully Regression Test : CRM Profile Tasks & Merge & Error Message', '[QA] Test Execution for Fully Regression Test : CRM Leads', '[QA] Test Execution for Fully Regression Test : CRM Account', '[QA] Test Execution for Fully Regression Test : CRM Opportunities', '[QA] Test Execution for Fully Regression Test : CRM Setup', '[QA] Test Execution for Fully Regression Test : CRM Dashboard', '[QA] Test Execution for Fully Regression Test : CRM Reports', '[Backend] update the gitlab CI/CD for Prod on Logixpanel repo', '[BUG] Unable to log in Novox Client Portal', '[BUG] "Update button" icon cannot return back to original icon in Report board ', "[BUG] The report board didn't show up the report content in the dashboard ", '[BUG] Unable to log in Novox CRM -500 Error', '[BUG] Unable to log in Novox CRM - 403 error', "[BUG] Add new email button in edit account page in the Accounts page didn't show up", '[BUG] Blank out page shows up after clicking  "+New Email" button', "[BUG] Open task page didn't show up correctly", '[QA] Test Execution for Fully Regression Test : Client User', '[QA] 2nd Test Execution for Fully Regression Test : CRM Dashboard', '[QA] 2nd Test Execution for Fully Regression Test : CRM Reports', '[QA] 2nd Test Execution for Fully Regression Test : CRM Account', '[BUG] Error pop up when trying to delete the Attachments on the Account', '[QA] Smoke test for Client Portal ']
+-----------------------------------------------------
+story_sprint : ['LP Sprint 26']
+story_number : LP1-2882
+story_point : 89.0
+subtask_number : ['LP1-3257', 'LP1-3258', 'LP1-3259', 'LP1-3260', 'LP1-3267', 'LP1-3269', 'LP1-3270', 'LP1-3271']
+subtask_title : ["[QA] Read document for [Admin Portal] Add 'Source' column field and tag in Individual and Corporate Accounts section", "[QA] Write test plan for [Admin Portal] Add 'Source' column field and tag in Individual and Corporate Accounts section", "[QA] Write test case for [Admin Portal] Add 'Source' column field and tag in Individual and Corporate Accounts section", "[QA] Test execution for [Admin Portal] Add 'Source' column field and tag in Individual and Corporate Accounts section", '[Backend] Create the new column on Database.', '[Backend] Add a method to update "Source"', '[Backend] Update the JS and view to show/update the Source on the page of edit ', '[Backend] Update the JS and view to show the Source on the page of dashboard ']
+-----------------------------------------------------
