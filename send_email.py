@@ -30,7 +30,6 @@ def main(args):
 
     # We assume that the file is in the directory where you run your Python script from
     with open(filename, "rb") as attachment:
-        # The content type "application/octet-stream" means that a MIME attachment is a binary file
         part = MIMEBase("application", "octet-stream")
         part.set_payload(attachment.read())
 

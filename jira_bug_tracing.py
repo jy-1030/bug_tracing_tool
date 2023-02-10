@@ -4,12 +4,10 @@ import sys
 import numpy as np
 from jira import JIRA
 
-import pyecharts
 from pyecharts.globals import ThemeType
 from pyecharts import options as opts
 from pyecharts.charts import Bar, Line
 
-import send_email
 from ReadConfig import readconfig
 
 jira_url = readconfig("JIRA", option="JURL")
@@ -25,24 +23,11 @@ story_subtasks = []
 subtasks_key = []
 subtasks_summary = []
 
-# define
-
+# custom define
 bug_number = []
 second_test = []
-customfield = []
+custom_col = jira_searching.split(",")
 
-
-# custom_field = []
-# custom_col = []
-
-
-"""
-#to do
-根據search的內容建list,存對應的數值,再畫圖
-[BE] = 5
-[FE] = 0
-[QA] = 5
-"""
 
 def connect_jira():
     jira = JIRA(jira_url, basic_auth=(jira_user, jira_passwd))
@@ -90,7 +75,6 @@ def read_json_file(args):
 
     """=====================[bug]==================================="""
 
-    # bug_number = []
     for i in np.arange(0, len(data)):
         num = 0
         for p in np.arange(0, len(subtasks_summary[i])):
@@ -99,37 +83,17 @@ def read_json_file(args):
         bug_number.append(num)
 
     """=====================[CUSTOMFIELD]==================================="""
-    #
-    # col = jira_searching.split(",")
-    # for i in np.arange(0, len(col)):
-    #     col_i = []
-    #     for j in np.arange(0, len(data)):
-    #         num = 0
-    #         for p in np.arange(0, len(subtasks_summary[j])):
-    #             if col[i] in subtasks_summary[j][p]:
-    #                 num = num + 1
-    #                 custom_col.append(num)
-    #
-    # print(col)
+    if not custom_col[0] == '':
+        for i in np.arange(0, len(custom_col)):
+            globals()[str(custom_col[i])] = []
+            for j in np.arange(0, len(data)):
+                num = 0
+                for p in np.arange(0, len(subtasks_summary[j])):
+                    if custom_col[i] in subtasks_summary[j][p]:
+                        num = num + 1
 
-    # for j in np.arange(0, len(data)):
-    #     num = 0
-    #     for p in np.arange(0, len(subtasks_summary[j])):
-    #         if "[QA]" in subtasks_summary[j][p]:
-    #             print(subtasks_summary[j][p])
-    #             num = num + 1
-    #
-    #     custom_col.append(num)
-    #     print(custom_col)
-
-    for i in np.arange(0, len(data)):
-        num = 0
-
-        for p in np.arange(0, len(subtasks_summary[i])):
-            if jira_searching in subtasks_summary[i][p]:
-                num = num + 1
-        # print(num)
-        customfield.append(num)
+                globals()[str(custom_col[i])].append(num)
+    """=====================[CUSTOMFIELD]==================================="""
 
 
 def detail_file(args):
@@ -170,25 +134,11 @@ def get_chart(args):
         Bar(init_opts=opts.InitOpts(page_title="BUG TRACKING", theme=ThemeType.DARK, width='1500', height='400px'))
         .add_xaxis(story_key)
         .add_yaxis("bug_number", bug_number, yaxis_index=0)
-        # .add_yaxis("2nd_test_execution", second_test, yaxis_index=0)
-        .add_yaxis(jira_searching, customfield, yaxis_index=0)
         .set_series_opts(
             itemstyle_opts=opts.ItemStyleOpts(opacity=0.6),
-            # 为了不影响标记点，这里把标签关掉
-            # label_opts=opts.LabelOpts(is_show=False),
-            # markpoint_opts=opts.MarkPointOpts(
-            #     data=[
-            #         # 根据坐标定位
-            #         opts.MarkPointItem(coord=['LP1-3617', 150], name="FAIL"),
-            #         # # 根据像素值定位
-            #         # opts.MarkPointItem(x=200, y=160, name="像素值"),
-            #         # # 设置显示的value
-            #         # opts.MarkPointItem(coord=[4, 150], name="设置value", value='hi'),
-            #     ]))
         )
         #
         .set_global_opts(
-            # datazoom_opts=opts.DataZoomOpts(range_start=50, range_end=80),
             title_opts=opts.TitleOpts(title="Sprint " + args[0], subtitle=''),
             legend_opts=opts.LegendOpts(is_show=True, type_='scroll'),  # 圖例
             tooltip_opts=opts.TooltipOpts(trigger="axis", axis_pointer_type="cross"),
@@ -211,12 +161,26 @@ def get_chart(args):
         )
     )
 
+    if not custom_col[0] == '':
+        for i in np.arange(0, len(custom_col)):
+            bar.add_yaxis(custom_col[i], globals()[custom_col[i]]).set_series_opts(
+                itemstyle_opts=opts.ItemStyleOpts(opacity=0.6)
+            )
+
     # line chart
     line = (
         Line()
         .add_xaxis(story_key)
         # .add_yaxis('bug_number', bug_number, yaxis_index=1)
         .add_yaxis('story_point', story_point, yaxis_index=1)
+        .set_series_opts(
+            label_opts=opts.LabelOpts(is_show=False),
+            markpoint_opts=opts.MarkPointOpts(
+                data=[
+                    opts.MarkPointItem(type_="max", name="最大值"),
+                ]
+            ),
+        )
     )
 
     bar.overlap(line)
@@ -242,7 +206,7 @@ def main(args):
     print("-----------------------------------Step 4 draw a chart ----------------------------------------")
     get_chart(args)
     print("-----------------------------------Step 5 send a email ----------------------------------------")
-    send_email.main(args)
+    # send_email.main(args)
 
 
 if __name__ == '__main__':
