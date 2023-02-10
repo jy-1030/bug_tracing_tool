@@ -4,9 +4,18 @@ import sys
 import numpy as np
 from jira import JIRA
 
+import pyecharts
 from pyecharts.globals import ThemeType
 from pyecharts import options as opts
 from pyecharts.charts import Bar, Line
+
+import send_email
+from ReadConfig import readconfig
+
+jira_url = readconfig("JIRA", option="JURL")
+jira_user = readconfig("JIRA", option="JUSER")
+jira_passwd = readconfig("JIRA", option="JPASSWD")
+jira_searching = readconfig("JIRA", option="SEARCH")
 
 story_key = []
 story_summary = []
@@ -16,14 +25,27 @@ story_subtasks = []
 subtasks_key = []
 subtasks_summary = []
 
+# define
+
 bug_number = []
 second_test = []
+customfield = []
 
+
+# custom_field = []
+# custom_col = []
+
+
+"""
+#to do
+根據search的內容建list,存對應的數值,再畫圖
+[BE] = 5
+[FE] = 0
+[QA] = 5
+"""
 
 def connect_jira():
-    jira = JIRA(' https://zerologix.atlassian.net/',
-                basic_auth=('elena.peng@zerologix.com', 'mL6DrVKAZhkdcNLwZoLx84AC'))
-
+    jira = JIRA(jira_url, basic_auth=(jira_user, jira_passwd))
     return jira
 
 
@@ -49,20 +71,20 @@ def read_json_file(args):
         data = json.load(f)
 
     for story_num in data:
-        story_key.append(story_num["key"])
-        story_summary.append(story_num["fields"]["summary"])
-        story_point.append(story_num["fields"]["customfield_10028"])
+        story_key.append(story_num["key"])  # story_number
+        story_summary.append(story_num["fields"]["summary"])  # story_title
+        story_point.append(story_num["fields"]["customfield_10028"])  # story_point
         cache_story_sprint = []
         for i in story_num["fields"]["customfield_10020"]:
-            cache_story_sprint.append(i["name"])
+            cache_story_sprint.append(i["name"])  # sprint_number
         story_sprint.append(cache_story_sprint)
         for i in story_num["fields"]["subtasks"]:
             story_subtasks.append(i)
         cache_subtasks_key = []
         cache_subtasks_summary = []
         for i in story_num["fields"]["subtasks"]:
-            cache_subtasks_key.append(i["key"])
-            cache_subtasks_summary.append(i["fields"]["summary"])
+            cache_subtasks_key.append(i["key"])  # subtask_number
+            cache_subtasks_summary.append(i["fields"]["summary"])  # subtask_title
         subtasks_key.append(cache_subtasks_key)
         subtasks_summary.append(cache_subtasks_summary)
 
@@ -76,15 +98,38 @@ def read_json_file(args):
                 num = num + 1
         bug_number.append(num)
 
-    """=====================[QA]==================================="""
-    # second_test = []
+    """=====================[CUSTOMFIELD]==================================="""
+    #
+    # col = jira_searching.split(",")
+    # for i in np.arange(0, len(col)):
+    #     col_i = []
+    #     for j in np.arange(0, len(data)):
+    #         num = 0
+    #         for p in np.arange(0, len(subtasks_summary[j])):
+    #             if col[i] in subtasks_summary[j][p]:
+    #                 num = num + 1
+    #                 custom_col.append(num)
+    #
+    # print(col)
+
+    # for j in np.arange(0, len(data)):
+    #     num = 0
+    #     for p in np.arange(0, len(subtasks_summary[j])):
+    #         if "[QA]" in subtasks_summary[j][p]:
+    #             print(subtasks_summary[j][p])
+    #             num = num + 1
+    #
+    #     custom_col.append(num)
+    #     print(custom_col)
+
     for i in np.arange(0, len(data)):
         num = 0
 
         for p in np.arange(0, len(subtasks_summary[i])):
-            if "2nd" in subtasks_summary[i][p]:
+            if jira_searching in subtasks_summary[i][p]:
                 num = num + 1
-        second_test.append(num)
+        # print(num)
+        customfield.append(num)
 
 
 def detail_file(args):
@@ -98,6 +143,7 @@ def detail_file(args):
     for i in np.arange(0, len(story_key)):
         f.writelines('story_sprint : ' + str(story_sprint[i]) + '\n')
         f.writelines('story_number : ' + str(story_key[i]) + '\n')
+        f.writelines('story_title : ' + str(story_summary[i]) + '\n')
         f.writelines('story_point : ' + str(story_point[i]) + '\n')
         f.writelines('subtask_number : ' + str(subtasks_key[i]) + '\n')
         f.writelines('subtask_title : ' + str(subtasks_summary[i]) + '\n')
@@ -113,24 +159,40 @@ def get_chart(args):
     """
     draw a bar chart and line chart
 
-    x axis : story_key
-    y axis (L) : bug_number
-    y axis (R) : story_point
+    x-axis : story_key
+    y-axis (L) : bug_number
+    y-axis (R) : story_point
 
     """
 
     # bar chart
     bar = (
-        Bar(init_opts=opts.InitOpts(theme=ThemeType.DARK))
+        Bar(init_opts=opts.InitOpts(page_title="BUG TRACKING", theme=ThemeType.DARK, width='1500', height='400px'))
         .add_xaxis(story_key)
         .add_yaxis("bug_number", bug_number, yaxis_index=0)
-        .add_yaxis("2nd_test_execution", second_test, yaxis_index=0)
-
+        # .add_yaxis("2nd_test_execution", second_test, yaxis_index=0)
+        .add_yaxis(jira_searching, customfield, yaxis_index=0)
+        .set_series_opts(
+            itemstyle_opts=opts.ItemStyleOpts(opacity=0.6),
+            # 为了不影响标记点，这里把标签关掉
+            # label_opts=opts.LabelOpts(is_show=False),
+            # markpoint_opts=opts.MarkPointOpts(
+            #     data=[
+            #         # 根据坐标定位
+            #         opts.MarkPointItem(coord=['LP1-3617', 150], name="FAIL"),
+            #         # # 根据像素值定位
+            #         # opts.MarkPointItem(x=200, y=160, name="像素值"),
+            #         # # 设置显示的value
+            #         # opts.MarkPointItem(coord=[4, 150], name="设置value", value='hi'),
+            #     ]))
+        )
         #
         .set_global_opts(
+            # datazoom_opts=opts.DataZoomOpts(range_start=50, range_end=80),
             title_opts=opts.TitleOpts(title="Sprint " + args[0], subtitle=''),
             legend_opts=opts.LegendOpts(is_show=True, type_='scroll'),  # 圖例
             tooltip_opts=opts.TooltipOpts(trigger="axis", axis_pointer_type="cross"),
+            xaxis_opts=opts.AxisOpts(axislabel_opts={'interval': '0'}),
             yaxis_opts=opts.AxisOpts(
                 name="bug_number",
                 position="left",
@@ -163,8 +225,9 @@ def get_chart(args):
 
 def main(args):
     print("-----------------------------------Step 1 connect to JIRA ----------------------------------------")
-    jql = 'project = "LP1" AND type = "Story" AND summary !~ "Maintenance*" AND summary !~ "OPS*" AND Sprint = ' + args[
-        0] + ' ORDER BY created DESC'
+    jql = 'type = "Story" AND summary !~ "Maintenance*" AND summary !~ "OPS*" AND Sprint = ' + \
+          args[
+              0] + ' ORDER BY created DESC'
     print(jql)
     ticket = connect_jira().search_issues(jql, maxResults=200, json_result=True)
     issue_ticket = ticket['issues']
@@ -178,6 +241,8 @@ def main(args):
 
     print("-----------------------------------Step 4 draw a chart ----------------------------------------")
     get_chart(args)
+    print("-----------------------------------Step 5 send a email ----------------------------------------")
+    send_email.main(args)
 
 
 if __name__ == '__main__':
