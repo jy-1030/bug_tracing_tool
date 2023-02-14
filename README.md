@@ -7,7 +7,7 @@ tracking bug ticket on jira platform
 Step 1. Connect to JIRA <br>
 Step 2. download data in data file (.json) <br>
 Step 3. analyzing  json file <br>
-* read json file and store data in result file (.txt) <br>
+
   * story_number <br>
   * story_title <br>
   * story_point <br>
@@ -15,10 +15,14 @@ Step 3. analyzing  json file <br>
   * subtask_number <br>
   * subtask_title <br>
   
+  * Save the above contents result file (.txt) <br>
+  
 Step 4 visualization  <br>
   * generate .html store in result file <br>
   * x -> story number in a sprint <br>
   * y -> story point , number of each subtasks(eg. bug ticket) <br>
+<br>
+
 Step 5 sending email <br>
 
 -------------
