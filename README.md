@@ -55,8 +55,12 @@ PASSWD = email passwrod <br>
 MSG_TO = receiver <br>
 
 
+-------------
+
+## result
+
+![image](https://github.com/jy-1030/bug_tracing_tool/blob/master/image/result.jpg)
 
 
-  
   
 
