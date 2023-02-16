@@ -2,16 +2,16 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Awesome-pyecharts</title>
+    <title>BUG TRACKING</title>
             <script type="text/javascript" src="https://assets.pyecharts.org/assets/v5/echarts.min.js"></script>
 
 </head>
 <body >
-    <div id="1a30652248404debac965b6613eb0fb5" class="chart-container" style="width:900px; height:500px; "></div>
+    <div id="7ed7bb5673d448a0814f160832b82f83" class="chart-container" style="width:1500; height:400px; "></div>
     <script>
-        var chart_1a30652248404debac965b6613eb0fb5 = echarts.init(
-            document.getElementById('1a30652248404debac965b6613eb0fb5'), 'dark', {renderer: 'canvas'});
-        var option_1a30652248404debac965b6613eb0fb5 = {
+        var chart_7ed7bb5673d448a0814f160832b82f83 = echarts.init(
+            document.getElementById('7ed7bb5673d448a0814f160832b82f83'), 'dark', {renderer: 'canvas'});
+        var option_7ed7bb5673d448a0814f160832b82f83 = {
     "animation": true,
     "animationThreshold": 2000,
     "animationDuration": 1000,
@@ -55,12 +55,20 @@
             "label": {
                 "show": true,
                 "margin": 8
+            },
+            "itemStyle": {
+                "opacity": 0.6
+            },
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
             }
         },
         {
             "type": "bar",
-            "name": "2nd_test_execution",
-            "yAxisIndex": 0,
+            "name": "2nd",
             "legendHoverLink": true,
             "data": [
                 0,
@@ -88,6 +96,138 @@
             "label": {
                 "show": true,
                 "margin": 8
+            },
+            "itemStyle": {
+                "opacity": 0.6
+            },
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
+            }
+        },
+        {
+            "type": "bar",
+            "name": "QA",
+            "legendHoverLink": true,
+            "data": [
+                0,
+                0,
+                5,
+                4,
+                6,
+                5,
+                1
+            ],
+            "realtimeSort": false,
+            "showBackground": false,
+            "stackStrategy": "samesign",
+            "cursor": "pointer",
+            "barMinHeight": 0,
+            "barCategoryGap": "20%",
+            "barGap": "30%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": true,
+                "margin": 8
+            },
+            "itemStyle": {
+                "opacity": 0.6
+            },
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
+            }
+        },
+        {
+            "type": "bar",
+            "name": "Backend",
+            "legendHoverLink": true,
+            "data": [
+                5,
+                0,
+                2,
+                7,
+                5,
+                4,
+                3
+            ],
+            "realtimeSort": false,
+            "showBackground": false,
+            "stackStrategy": "samesign",
+            "cursor": "pointer",
+            "barMinHeight": 0,
+            "barCategoryGap": "20%",
+            "barGap": "30%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": true,
+                "margin": 8
+            },
+            "itemStyle": {
+                "opacity": 0.6
+            },
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
+            }
+        },
+        {
+            "type": "bar",
+            "name": "Frontend",
+            "legendHoverLink": true,
+            "data": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "realtimeSort": false,
+            "showBackground": false,
+            "stackStrategy": "samesign",
+            "cursor": "pointer",
+            "barMinHeight": 0,
+            "barCategoryGap": "20%",
+            "barGap": "30%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": true,
+                "margin": 8
+            },
+            "itemStyle": {
+                "opacity": 0.6
+            },
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
             }
         },
         {
@@ -133,7 +273,7 @@
             ],
             "hoverAnimation": true,
             "label": {
-                "show": true,
+                "show": false,
                 "margin": 8
             },
             "logBase": 10,
@@ -148,19 +288,31 @@
                 "opacity": 0
             },
             "zlevel": 0,
-            "z": 0
+            "z": 0,
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
+            }
         }
     ],
     "legend": [
         {
             "data": [
                 "bug_number",
-                "2nd_test_execution",
+                "2nd",
+                "QA",
+                "Backend",
+                "Frontend",
                 "story_point"
             ],
             "selected": {
                 "bug_number": true,
-                "2nd_test_execution": true,
+                "2nd": true,
+                "QA": true,
+                "Backend": true,
+                "Frontend": true,
                 "story_point": true
             },
             "type": "scroll",
@@ -215,6 +367,9 @@
             "nameLocation": "end",
             "nameGap": 15,
             "gridIndex": 0,
+            "axisLabel": {
+                "interval": "0"
+            },
             "inverse": false,
             "offset": 0,
             "splitNumber": 5,
@@ -313,7 +468,7 @@
         }
     ]
 };
-        chart_1a30652248404debac965b6613eb0fb5.setOption(option_1a30652248404debac965b6613eb0fb5);
+        chart_7ed7bb5673d448a0814f160832b82f83.setOption(option_7ed7bb5673d448a0814f160832b82f83);
     </script>
 </body>
 </html>

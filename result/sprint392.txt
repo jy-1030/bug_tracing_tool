@@ -1,47 +1,55 @@
 story_sprint : ['LP1 Sprint 32']
 story_number : LP1-3898
+story_title : [KYC Risk Score] [QA Testing] Calculate Logics for Individual Accounts
 story_point : 89.0
 subtask_number : ['LP1-3900']
 subtask_title : ['[QA] Test execution for  [KYC Risk Score] Calculate Button']
 -----------------------------------------------------
-story_sprint : ['LP1 Sprint 32']
+story_sprint : ['LP1 Sprint 32', 'LP1 Sprint 34']
 story_number : LP1-3878
+story_title : [Part 2: Testing & Implementation] Checking MT4/MT5 Account Status for Deposits, Withdrawals and Internal Transfers in LogixPanel
 story_point : 89.0
 subtask_number : ['LP1-3823', 'LP1-3890', 'LP1-3891', 'LP1-3892', 'LP1-3896']
 subtask_title : ['[Backend] Conduct testing for the scenarios of internal transfers', '[Backend] Refactor account model', '[Backend] Refactor transfer/deposit/withdraw service', '[Backend] Refactor exception handler', '[Backend] Refactor mt library']
 -----------------------------------------------------
 story_sprint : ['LP1 Sprint 32']
 story_number : LP1-3874
+story_title : 【Novox Whitelabel】【Blueberry Whitelabel】ACY- Novox/Blueberry System Integration - S32
 story_point : 144.0
-subtask_number : ['LP1-3818', 'LP1-3877', 'LP1-3897', 'LP1-3876', 'LP1-3875', 'LP1-3918']
-subtask_title : ['[QA] Test execution for any requirement', '[Backend] investigating the issues about the miss trading account on Logixpanel.', '[Backend] setting the env of python for BBM mass import', '[Backend] update the validate on API create trader.', '[Backend] mass import the data of BBM client.', '[Backend] fix the issue for signature to resolve the data that the prefix is spaces. ']
+subtask_number : ['LP1-3877', 'LP1-3897', 'LP1-3876', 'LP1-3875', 'LP1-3918']
+subtask_title : ['[Backend] investigating the issues about the miss trading account on Logixpanel.', '[Backend] setting the env of python for BBM mass import', '[Backend] update the validate on API create trader.', '[Backend] mass import the data of BBM client.', '[Backend] fix the issue for signature to resolve the data that the prefix is spaces. ']
 -----------------------------------------------------
 story_sprint : ['LP1 Sprint 32']
 story_number : LP1-3856
+story_title : [KYC Risk Score] [QA Testing] Testing of feature in Nationality/Industry/Country of residence list
 story_point : 55.0
 subtask_number : ['LP1-3882', 'LP1-3919', 'LP1-3920', 'LP1-3921']
 subtask_title : ['[QA] Test Execution - Verify the feature in Nationality/Industry/Country of residence list', '[BUG] The number of selected items is incorrect on popup msg while deleting item in KYC settings.', '[BUG] The 1st checkbox in list is not unchecked automatically after cancel deleting all.', '[BUG] Cannot delete items after select all.']
 -----------------------------------------------------
 story_sprint : ['LP1 Sprint 31', 'LP1 Sprint 32']
 story_number : LP1-3837
+story_title : [Admin Portal] Add 'Nationality', 'Industry' and 'Delivery Channel' fields
 story_point : 89.0
 subtask_number : ['LP1-3841', 'LP1-3842', 'LP1-3843', 'LP1-3844', 'LP1-3859', 'LP1-3865']
 subtask_title : ['Jason to push Yick to create subtask', "[Backend] Add string column 'delivery_channel' in table 'profile'", '[Backend] Show three fields in individual trader detail page', '[Backend] Update edit api to save new columns value in DB', '[Backend] Add feature to sync data from CRM to LP', "[Backend] Update account create api called by 'form' to capture industry and nationality "]
 -----------------------------------------------------
 story_sprint : ['LP1 Sprint 32']
 story_number : LP1-3733
+story_title : [KYC Risk Score] Calculate risk score of all the new incoming pending applications
 story_point : 89.0
-subtask_number : ['LP1-3879', 'LP1-3880', 'LP1-3881', 'LP1-3887', 'LP1-3888', 'LP1-3889']
-subtask_title : ['[Backend] Create calculate single account API on api_cloudhub_panel', '[Backend] Research create new account process on api_cloudhub', '[Backend] Connect calculate risk score API on api_cloudhub', '[QA] Write test plan for [KYC Risk Score] Calculate risk score of all the new incoming pending applications', '[QA] Write test cases for [KYC Risk Score] Calculate risk score of all the new incoming pending applications', '[QA] Test execution for [KYC Risk Score] Calculate risk score of all the new incoming pending applications']
+subtask_number : ['LP1-3879', 'LP1-3880', 'LP1-3881', 'LP1-3887', 'LP1-3888', 'LP1-3889', 'LP1-3936']
+subtask_title : ['[Backend] Create calculate single account API on api_cloudhub_panel', '[Backend] Research create new account process on api_cloudhub', '[Backend] Connect calculate risk score API on api_cloudhub', '[QA] Write test plan for [KYC Risk Score] Calculate risk score of all the new incoming pending applications', '[QA] Write test cases for [KYC Risk Score] Calculate risk score of all the new incoming pending applications', '[QA] Test execution for [KYC Risk Score] Calculate risk score of all the new incoming pending applications', '[BUG] Overall Risk Score Setting table duplicate in the AU env ']
 -----------------------------------------------------
 story_sprint : ['LP1 Sprint 32']
 story_number : LP1-3645
+story_title : [KYC Risk Score] Corporate account
 story_point : 89.0
 subtask_number : ['LP1-3883', 'LP1-3884', 'LP1-3885', 'LP1-3886', 'LP1-3893', 'LP1-3894']
 subtask_title : ['[QA] Read document for [KYC Risk Score] Corporate account', '[QA] Write test plan for [KYC Risk Score] Corporate account', '[QA] Write test case for [KYC Risk Score] Corporate account', '[QA] Test execution for [KYC Risk Score] Corporate account', "[Backend] Add 'risk' column in listing page", "[Backend] Add 'risk score section' in detail page"]
 -----------------------------------------------------
 story_sprint : ['LP1 Sprint 31', 'LP1 Sprint 32']
 story_number : LP1-3617
+story_title :  [KYC Risk Score] Calculation of risk score for accounts
 story_point : 144.0
 subtask_number : ['LP1-3814', 'LP1-3815', 'LP1-3816', 'LP1-3827', 'LP1-3828', 'LP1-3835', 'LP1-3901', 'LP1-3909', 'LP1-3913']
 subtask_title : ['[QA] Write test plan for [KYC Risk Score] Calculation of risk score for accounts', '[QA] Write test cases for  [KYC Risk Score] Calculation of risk score for accounts', '[QA] Test execution for  [KYC Risk Score] Calculation of risk score for accounts', "[Backend] Add 'Risk' column in 'individual account listing page", "[Backend] Add 'KYC Risk Score' table in the individual trader details page", '[QA] Read story scope for [KYC Risk Score] Calculation of risk score for accounts', '[BUG] Case insensitive for the value of Industry and Employment Status fields', '[QA] 2nd Test execution for [KYC Risk Score] Calculation of risk score for accounts', "[BUG] Length of the Nationality fields can't be limited "]

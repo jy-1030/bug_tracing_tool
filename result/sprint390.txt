@@ -1,41 +1,48 @@
 story_sprint : ['LP1 Sprint 31', 'LP1 Sprint 32']
 story_number : LP1-3837
+story_title : [Admin Portal] Add 'Nationality', 'Industry' and 'Delivery Channel' fields
 story_point : 89.0
 subtask_number : ['LP1-3841', 'LP1-3842', 'LP1-3843', 'LP1-3844', 'LP1-3859', 'LP1-3865']
 subtask_title : ['Jason to push Yick to create subtask', "[Backend] Add string column 'delivery_channel' in table 'profile'", '[Backend] Show three fields in individual trader detail page', '[Backend] Update edit api to save new columns value in DB', '[Backend] Add feature to sync data from CRM to LP', "[Backend] Update account create api called by 'form' to capture industry and nationality "]
 -----------------------------------------------------
 story_sprint : ['LP1 Sprint 31']
 story_number : LP1-3805
+story_title : 【Novox Whitelabel】【Blueberry Whitelabel】ACY- Novox/Blueberry System Integration - S31
 story_point : 233.0
 subtask_number : []
 subtask_title : []
 -----------------------------------------------------
 story_sprint : ['LP1 Sprint 31', 'LP1 Sprint 32']
 story_number : LP1-3617
+story_title :  [KYC Risk Score] Calculation of risk score for accounts
 story_point : 144.0
 subtask_number : ['LP1-3814', 'LP1-3815', 'LP1-3816', 'LP1-3827', 'LP1-3828', 'LP1-3835', 'LP1-3901', 'LP1-3909', 'LP1-3913']
 subtask_title : ['[QA] Write test plan for [KYC Risk Score] Calculation of risk score for accounts', '[QA] Write test cases for  [KYC Risk Score] Calculation of risk score for accounts', '[QA] Test execution for  [KYC Risk Score] Calculation of risk score for accounts', "[Backend] Add 'Risk' column in 'individual account listing page", "[Backend] Add 'KYC Risk Score' table in the individual trader details page", '[QA] Read story scope for [KYC Risk Score] Calculation of risk score for accounts', '[BUG] Case insensitive for the value of Industry and Employment Status fields', '[QA] 2nd Test execution for [KYC Risk Score] Calculation of risk score for accounts', "[BUG] Length of the Nationality fields can't be limited "]
 -----------------------------------------------------
 story_sprint : ['LP1 Sprint 31']
 story_number : LP1-3616
+story_title :  [KYC Risk Score] Calculate Button
 story_point : 89.0
 subtask_number : ['LP1-3811', 'LP1-3812', 'LP1-3813', 'LP1-3833', 'LP1-3834', 'LP1-3836', 'LP1-3840', 'LP1-3851', 'LP1-3852', 'LP1-3864', 'LP1-3866']
 subtask_title : ['[QA] Write test plan for [KYC Risk Score] Calculate Button', '[QA] Write test case for  [KYC Risk Score] Calculate Button', '[QA] Test execution for  [KYC Risk Score] Calculate Button', '[Backend] Create calculate service', '[Backend] Create mass calculate job', '[Backend] Connect admin page with calculate API', '[Backend] Research logix panel and crm trader data', '[QA] Read scope for [KYC Risk Score] Calculate Button', '[Backend] Add risk score column in profile table', '[Backend] Float number handle', '[Backend] Fix calculation feature only capture english name']
 -----------------------------------------------------
 story_sprint : ['LP1 Sprint 31']
 story_number : LP1-3615
+story_title :  [KYC Risk Score] Employment Status and Delivery Channel List
 story_point : 89.0
 subtask_number : ['LP1-3807', 'LP1-3808', 'LP1-3809', 'LP1-3810', 'LP1-3825', 'LP1-3826', 'LP1-3845', 'LP1-3846', 'LP1-3847', 'LP1-3848', 'LP1-3849', 'LP1-3850']
 subtask_title : ['[QA] Read story scope for Employment Status and Delivery Channel List', '[QA] Write test plan for Employment Status and Delivery Channel List', '[QA] Write test cases for Employment Status and Delivery Channel List', '[QA] Test execution for Employment Status and Delivery Channel List', '[Backend] Create seeder files', '[Backend] Update language file', '[Backend] Add name_zh column in kyc_options table', '[Backend] Update seeder format', '[Backend] Update display value in multi language', '[BUG] The ‘ok’ button in the duplicate record popup in english in zh version', '[QA] Write test plan for multi language ', '[QA] Write test case for multi language ']
 -----------------------------------------------------
 story_sprint : ['LP1 Sprint 30', 'LP1 Sprint 31']
 story_number : LP1-3614
+story_title :  [KYC Risk Score] Industry List
 story_point : 89.0
 subtask_number : ['LP1-3666', 'LP1-3702', 'LP1-3703', 'LP1-3704', 'LP1-3713', 'LP1-3714', 'LP1-3715', 'LP1-3716', 'LP1-3782', 'LP1-3800']
 subtask_title : ['[QA] Read document for [KYC Risk Score] Industry List', '[QA] Write test plan for [KYC Risk Score] Industry List', '[QA] Write test case for [KYC Risk Score] Industry List', '[QA] Test execution for [KYC Risk Score] Industry List', '[Backend] Create Industry List template', '[Backend] Create Industry add API', '[Backend] Create Industry edit API', '[Backend] Create Industry delete API', '[BUG] UI & Trigger issues', '[QA] Test execution 2nd for [KYC Risk Score] Industry List']
 -----------------------------------------------------
 story_sprint : ['LP1 Sprint 31']
 story_number : LP1-2911
+story_title : [Part 1: Research] Checking MT4/MT5 Account Status for Deposits, Withdrawals and Internal Transfers in LogixPanel
 story_point : 89.0
 subtask_number : ['LP1-3817', 'LP1-3820', 'LP1-3821', 'LP1-3822']
 subtask_title : ['[QA] Document verification', '[Backend] Check data flow and logic for current mt servers and thrift protocol', '[Backend] Add checking for for MT4 accounts', '[Backend] Add checking for MT5 accounts']
